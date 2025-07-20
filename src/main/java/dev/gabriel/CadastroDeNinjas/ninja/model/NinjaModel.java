@@ -1,5 +1,6 @@
-package dev.gabriel.CadastroDeNinjas.models;
+package dev.gabriel.CadastroDeNinjas.ninja.model;
 
+import dev.gabriel.CadastroDeNinjas.missions.model.MissionModel;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -7,6 +8,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "tb_cadastro")
+
 public class NinjaModel {
 
     @Id
@@ -16,6 +18,12 @@ public class NinjaModel {
     private String name;
     private int age;
     private String email;
+
+
+    // @ManyToOne - A ninja for one mission
+    @ManyToOne
+    @JoinColumn(name = "missions_id") //Forenig Id or (Chave Estrangeira (pt-br))
+    private MissionModel missions;
 
     public NinjaModel() {
     }

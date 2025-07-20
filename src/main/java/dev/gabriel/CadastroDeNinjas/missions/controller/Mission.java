@@ -1,6 +1,4 @@
-package dev.gabriel.CadastroDeNinjas.controllers;
-
-
+package dev.gabriel.CadastroDeNinjas.missions.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,11 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping
-public class NinjaController {
+public class Mission {
+    @GetMapping("/mission")
+    public String missionController(){
+        return "Controller mission";
 
-    @GetMapping("/mensage")
-    public String myFirstMensage(){
-
-        return "Minha Primeira Mensagem";
     }
 }
