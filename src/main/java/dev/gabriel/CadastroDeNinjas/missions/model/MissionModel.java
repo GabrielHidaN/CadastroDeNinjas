@@ -2,15 +2,18 @@ package dev.gabriel.CadastroDeNinjas.missions.model;
 
 import dev.gabriel.CadastroDeNinjas.ninja.model.NinjaModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 
 @Entity
-@Data
 @Table(name = "tb_mission")
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 
 public class MissionModel {
     @Id
@@ -24,13 +27,5 @@ public class MissionModel {
     // @OneToMany - A mission for many to ninjas
     @OneToMany(mappedBy = "missions")
     private List<NinjaModel> ninjas;
-
-    public MissionModel() {
-    }
-
-    public MissionModel(Long id, String name,  String difficulty) {
-        this.id = id;
-        this.name = name;
-        this.difficulty = difficulty;
-    }
+    
 }

@@ -2,13 +2,16 @@ package dev.gabriel.CadastroDeNinjas.ninja.model;
 
 import dev.gabriel.CadastroDeNinjas.missions.model.MissionModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 // Entity transforma uma classe em uma Entidade no Banco de dados
 @Entity
-@Data
 @Table(name = "tb_cadastro")
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class NinjaModel {
 
     @Id
@@ -25,12 +28,4 @@ public class NinjaModel {
     @JoinColumn(name = "missions_id") //Forenig Id or (Chave Estrangeira (pt-br))
     private MissionModel missions;
 
-    public NinjaModel() {
-    }
-
-    public NinjaModel(String name, String email, int age) {
-        this.name = name;
-        this.email = email;
-        this.age = age;
-    }
 }
