@@ -27,5 +27,5 @@ public class MissionModel {
     // @OneToMany - A mission for many to ninjas
     @OneToMany(mappedBy = "missions")
     private List<NinjaModel> ninjas;
-    
+
 }
