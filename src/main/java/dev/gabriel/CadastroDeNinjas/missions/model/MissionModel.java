@@ -18,9 +18,13 @@ import java.util.List;
 public class MissionModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")        
     Long id;
 
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "difficulty")
     private String difficulty;
 
 
