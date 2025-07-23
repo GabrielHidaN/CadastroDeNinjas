@@ -34,4 +34,5 @@ public class NinjaModel {
     @JoinColumn(name = "missions_id") //Forenig Id or (Chave Estrangeira (pt-br))
     private MissionModel missions;
 
+
 }
