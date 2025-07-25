@@ -1,5 +1,6 @@
 package dev.gabriel.CadastroDeNinjas.ninja.model;
 
+
 import dev.gabriel.CadastroDeNinjas.missions.model.MissionModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -23,7 +24,7 @@ public class NinjaModel {
     private String name;
 
     @Column(name = "age")
-    private int age;
+    private Integer age;
 
     @Column(name = "email" , unique = true )
     private String email;
