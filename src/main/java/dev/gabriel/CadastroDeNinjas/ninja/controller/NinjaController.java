@@ -24,10 +24,11 @@ public class NinjaController {
 
 
     // Show Ninja by Id (READ)
-    @GetMapping("/ninjaId")
-    public String ninjaById(){
-        return "This is the selected ID ninja";
+    @GetMapping("/{id}")
+    public NinjaModel showNinjaById(@PathVariable Long id){
+        return ninjaService.showNinjaById(id);
     }
+
 
 
     // Show all Ninjas (READ)

@@ -5,6 +5,7 @@ import dev.gabriel.CadastroDeNinjas.missions.repository.MissionRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MissionService {
@@ -15,7 +16,17 @@ public class MissionService {
         this.missionRepository = missionRepository;
     }
 
+
+    //show all missions
     public List<MissionModel> showAllMissions(){
         return missionRepository.findAll();
     }
+
+    // show mission by id
+
+    public MissionModel showMissionById(Long id){
+        Optional<MissionModel> showMissionById = missionRepository.findById(id);
+        return showMissionById.orElse(null);
+    }
+
 }

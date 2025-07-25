@@ -6,6 +6,7 @@ import dev.gabriel.CadastroDeNinjas.ninja.repository.NinjaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class NinjaService {
@@ -16,8 +17,16 @@ public class NinjaService {
         this.ninjaRepository = ninjaRepository;
     }
 
+    // show all ninjas
     public List<NinjaModel> showAllNinjas(){
         return ninjaRepository.findAll();
+    }
+
+    // show ninja by id
+
+    public NinjaModel showNinjaById(Long id){
+        Optional<NinjaModel> showNinjaById = ninjaRepository.findById(id);
+        return  showNinjaById.orElse(null);
     }
 
 }

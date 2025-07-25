@@ -25,9 +25,9 @@ public class MissionController {
 
 
     // Show Missions by Id (READ)
-    @GetMapping("/missionId")
-    public String missionById(){
-        return "This is the selected ID mission";
+    @GetMapping("/{id}")
+    public MissionModel showMissionById(@PathVariable Long id){
+        return missionService.showMissionById(id);
     }
 
     // Show all Missions (READ)
