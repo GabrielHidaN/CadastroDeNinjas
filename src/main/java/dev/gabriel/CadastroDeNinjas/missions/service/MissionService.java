@@ -29,4 +29,10 @@ public class MissionService {
         return showMissionById.orElse(null);
     }
 
+    // create new mission
+
+    public  MissionModel createMission(MissionModel missionModel){
+        return missionRepository.save(missionModel);
+    }
+
 }
