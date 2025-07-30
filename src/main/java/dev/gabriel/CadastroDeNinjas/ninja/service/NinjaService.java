@@ -29,4 +29,10 @@ public class NinjaService {
         return  showNinjaById.orElse(null);
     }
 
+    // create new ninja
+
+    public  NinjaModel createNinja(NinjaModel ninja){
+        return ninjaRepository.save(ninja);
+    }
+
 }
