@@ -1,8 +1,6 @@
 package dev.gabriel.CadastroDeNinjas.missions.controller;
-
 import dev.gabriel.CadastroDeNinjas.missions.model.MissionModel;
 import dev.gabriel.CadastroDeNinjas.missions.service.MissionService;
-import dev.gabriel.CadastroDeNinjas.ninja.service.NinjaService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,5 +1,4 @@
 package dev.gabriel.CadastroDeNinjas.ninja.controller;
-
 import dev.gabriel.CadastroDeNinjas.ninja.model.NinjaModel;
 import dev.gabriel.CadastroDeNinjas.ninja.service.NinjaService;
 import org.springframework.web.bind.annotation.*;
@@ -45,8 +44,8 @@ public class NinjaController {
     }
 
     //Delete Ninja by Id (READ)
-    @DeleteMapping("/delete")
-    public String ninjaDelete(){
-        return "Ninja Deleted";
+    @DeleteMapping("/delete/{id}")
+    public void deleteNinja (@PathVariable Long id){
+        ninjaService.deleteNinja(id);
     }
 }
