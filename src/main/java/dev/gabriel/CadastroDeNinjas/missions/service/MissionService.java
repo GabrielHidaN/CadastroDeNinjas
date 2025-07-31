@@ -35,4 +35,8 @@ public class MissionService {
         return missionRepository.save(missionModel);
     }
 
+    public void deleteMission(Long id){
+        missionRepository.deleteById(id);
+    }
+
 }

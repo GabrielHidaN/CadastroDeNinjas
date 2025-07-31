@@ -35,16 +35,16 @@ public class MissionController {
     }
 
 
-    // Update Mission by Id (READ)
+    // Update Mission by Id (UPDATE)
     @PutMapping("/update")
     public String missionUpdate(){
         return "Mission Updated";
     }
 
-    //Delete Mission by Id (READ)
-    @DeleteMapping("/delete")
-    public String missionDelete(){
-        return "Mission Deleted";
+    //Delete Mission by Id (DELETE)
+    @DeleteMapping("/delete/{id}")
+    public void missionDelete(@PathVariable  Long id){
+        missionService.deleteMission(id);
     }
         
 
