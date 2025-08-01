@@ -36,9 +36,9 @@ public class MissionController {
 
 
     // Update Mission by Id (UPDATE)
-    @PutMapping("/update")
-    public String missionUpdate(){
-        return "Mission Updated";
+    @PutMapping("/update/{id}")
+    public MissionModel updateMission(@PathVariable Long id , @RequestBody MissionModel mission){
+        return missionService.updateMission(id, mission);
     }
 
     //Delete Mission by Id (DELETE)

@@ -43,10 +43,10 @@ public class NinjaService {
 
     // update ninja
 
-    public  NinjaModel updateNinja(Long id , NinjaModel ninjaUpdate){
+    public  NinjaModel updateNinja(Long id , NinjaModel ninja){
         if (ninjaRepository.existsById(id)){
-            ninjaUpdate.setId(id);
-            return ninjaRepository.save(ninjaUpdate);
+            ninja.setId(id);
+            return ninjaRepository.save(ninja);
         }
         return null;
     }
