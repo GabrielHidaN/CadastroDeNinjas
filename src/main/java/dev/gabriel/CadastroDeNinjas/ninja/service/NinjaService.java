@@ -1,6 +1,8 @@
 package dev.gabriel.CadastroDeNinjas.ninja.service;
 
 
+import dev.gabriel.CadastroDeNinjas.ninja.dto.NinjaDTO;
+import dev.gabriel.CadastroDeNinjas.ninja.mapper.NinjaMapper;
 import dev.gabriel.CadastroDeNinjas.ninja.model.NinjaModel;
 import dev.gabriel.CadastroDeNinjas.ninja.repository.NinjaRepository;
 import org.springframework.stereotype.Service;
@@ -12,9 +14,11 @@ import java.util.Optional;
 public class NinjaService {
 
     private final NinjaRepository ninjaRepository;
+    private final NinjaMapper ninjaMapper;
 
-    public NinjaService(NinjaRepository ninjaRepository) {
+    public NinjaService(NinjaRepository ninjaRepository, NinjaMapper ninjaMapper) {
         this.ninjaRepository = ninjaRepository;
+        this.ninjaMapper = ninjaMapper;
     }
 
     // show all ninjas
@@ -31,8 +35,10 @@ public class NinjaService {
 
     // create new ninja
 
-    public  NinjaModel createNinja(NinjaModel ninja){
-        return ninjaRepository.save(ninja);
+    public NinjaDTO createNinja(NinjaDTO ninjaDTO){
+        NinjaModel ninja = ninjaMapper.map(ninjaDTO);
+        ninja = ninjaRepository.save(ninja);
+        return  ninjaMapper.map(ninja);
     }
 
     // delete ninja
