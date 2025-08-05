@@ -21,7 +21,7 @@ public class NinjaMapper {
         return ninjaModel;
     }
 
-    public NinjaDTO map(NinjaModel ninjaModel){
+    public static NinjaDTO map(NinjaModel ninjaModel){
         NinjaDTO ninjaDTO = new NinjaDTO();
 
         ninjaDTO.setId(ninjaModel.getId());
