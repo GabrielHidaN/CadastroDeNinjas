@@ -1,0 +1,2 @@
+ALTER TABLE tb_cadastro
+ADD COLUMN url_img VARCHAR(255);

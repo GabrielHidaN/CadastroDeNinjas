@@ -1,4 +1,5 @@
 package dev.gabriel.CadastroDeNinjas.ninja.controller;
+import dev.gabriel.CadastroDeNinjas.ninja.dto.NinjaDTO;
 import dev.gabriel.CadastroDeNinjas.ninja.model.NinjaModel;
 import dev.gabriel.CadastroDeNinjas.ninja.service.NinjaService;
 import org.springframework.web.bind.annotation.*;
@@ -18,14 +19,14 @@ public class NinjaController {
 
     // Create Ninja (CREATE)
     @PostMapping("/create")
-    public NinjaModel createNinja(@RequestBody NinjaModel ninjaModel){
-        return ninjaService.createNinja(ninjaModel);
+    public NinjaDTO createNinja(@RequestBody NinjaDTO ninja){
+        return ninjaService.createNinja(ninja);
     }
 
 
     // Show Ninja by Id (READ)
     @GetMapping("/{id}")
-    public NinjaModel showNinjaById(@PathVariable Long id){
+    public NinjaDTO showNinjaById(@PathVariable Long id){
         return ninjaService.showNinjaById(id);
     }
 
@@ -33,14 +34,14 @@ public class NinjaController {
 
     // Show all Ninjas (READ)
     @GetMapping("/all")
-    public List<NinjaModel> showAllNinjas(){
+    public List<NinjaDTO> showAllNinjas(){
         return ninjaService.showAllNinjas();
     }
 
 
     // Update Ninja by Id (READ)
     @PutMapping("/update/{id}")
-    public NinjaModel ninjaUpdate (@PathVariable Long id , @RequestBody NinjaModel ninjaUpdate){
+    public NinjaDTO ninjaUpdate (@PathVariable Long id , @RequestBody NinjaDTO ninjaUpdate){
         return ninjaService.updateNinja(id , ninjaUpdate);
     }
 

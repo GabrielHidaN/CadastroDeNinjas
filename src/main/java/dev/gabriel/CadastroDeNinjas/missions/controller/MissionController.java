@@ -1,4 +1,5 @@
 package dev.gabriel.CadastroDeNinjas.missions.controller;
+import dev.gabriel.CadastroDeNinjas.missions.dto.MissionDTO;
 import dev.gabriel.CadastroDeNinjas.missions.model.MissionModel;
 import dev.gabriel.CadastroDeNinjas.missions.service.MissionService;
 import org.springframework.web.bind.annotation.*;
@@ -17,27 +18,27 @@ public class MissionController {
 
     // Create Mission (CREATE)
     @PostMapping("/create")
-    public MissionModel createMission(@RequestBody MissionModel mission){
+    public MissionDTO createMission(@RequestBody MissionDTO mission){
         return missionService.createMission(mission);
     }
 
 
     // Show Missions by Id (READ)
     @GetMapping("/{id}")
-    public MissionModel showMissionById(@PathVariable Long id){
+    public MissionDTO showMissionById(@PathVariable Long id){
         return missionService.showMissionById(id);
     }
 
     // Show all Missions (READ)
     @GetMapping("/all")
-    public List<MissionModel> showAllMissions(){
+    public List<MissionDTO> showAllMissions(){
         return missionService.showAllMissions();
     }
 
 
     // Update Mission by Id (UPDATE)
     @PutMapping("/update/{id}")
-    public MissionModel updateMission(@PathVariable Long id , @RequestBody MissionModel mission){
+    public MissionDTO updateMission(@PathVariable Long id , @RequestBody MissionDTO mission){
         return missionService.updateMission(id, mission);
     }
 
